@@ -1,4 +1,4 @@
-## AshTerm/Learn
+## AbelTerm/Learn
 Let's see how you can build the same project from scratch now.
 
 ### Scaffold the project
