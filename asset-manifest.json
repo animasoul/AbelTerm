@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/AbelTerm/static/css/main.d037655e.css",
+    "main.js": "/AbelTerm/static/js/main.5c1e2c35.js",
+    "static/media/back.jpeg": "/AbelTerm/static/media/back.48828d2e267c7dca2809.jpeg",
+    "index.html": "/AbelTerm/index.html",
+    "main.d037655e.css.map": "/AbelTerm/static/css/main.d037655e.css.map",
+    "main.5c1e2c35.js.map": "/AbelTerm/static/js/main.5c1e2c35.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d037655e.css",
+    "static/js/main.5c1e2c35.js"
+  ]
+}
