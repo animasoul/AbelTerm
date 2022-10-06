@@ -5,6 +5,7 @@ import React from 'react'
 import getcat from '../utils/cat'
 import getdog from '../utils/dog'
 import getjoke from '../utils/joke'
+import getbitcoin from '../utils/bitcoin'
 
 export default function Term() {
     const cmds = commands.commands
@@ -25,7 +26,7 @@ export default function Term() {
                 "---",
                 "Type 'help' to see a list of commands.",
                 "---",
-                "try starting with 'dog'(paramters gif:jpg:png) or 'joke'",
+                "try starting with 'dog gif'(paramters gif:jpg:png) or 'joke'",
                 "---",
             ]}
             commands={{
@@ -64,6 +65,20 @@ export default function Term() {
                             terminal.current.pushToStdout(<img src={obj.url} width={obj.width} alt='dog'></img>)
                         } else {
                             return 'Please only use one parameter'
+                        }
+                    }
+                },
+                bitcoin: {
+                    description: 'Get bitcoin price',
+                    usage: 'bitcoin',
+                    fn: async () => {
+                        const obj = await getbitcoin()
+                        terminal.current.pushToStdout("getting prices from coindesk.com..\n---\n")
+                        terminal.current.pushToStdout("updated: "+obj.time.updated)
+                        terminal.current.pushToStdout(obj.disclaimer)
+                        var money
+                        for(let key in obj.bpi) {
+                            terminal.current.pushToStdout(key+":"+obj.bpi[key].rate)
                         }
                     }
                 },

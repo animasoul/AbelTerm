@@ -164,6 +164,10 @@ export default {
             description: 'Get a random dog gif.',
             usage: 'dog',
         },
+        bitcoin: {
+            description: 'Get bitcoin prices.',
+            usage: 'bitcoin',
+        },
         joke: {
             description: 'Get a random developer joke.',
             usage: 'joke',
