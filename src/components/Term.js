@@ -25,7 +25,7 @@ export default function Term() {
                 "---",
                 "Type 'help' to see a list of commands.",
                 "---",
-                "try starting with 'dog' or 'joke'",
+                "try starting with 'dog'(paramters gif:jpg:png) or 'joke'",
                 "---",
             ]}
             commands={{
@@ -40,18 +40,31 @@ export default function Term() {
                     description: 'Get a random cute cat~',
                     usage: 'cat',
                     fn: async () => {
-                        const url = await getcat()
+                        const obj = await getcat()
                         terminal.current.pushToStdout("getting a cute cat for you..\n---\n")
-                        terminal.current.pushToStdout(<img src={url} width="100%" height="100%" alt='cat'></img>)
+                        terminal.current.pushToStdout(<img src={obj.url} width={obj.url} alt='cat'></img>)
                     }
                 },
                 dog: {
                     description: 'Get a random dog gif',
                     usage: 'dog',
-                    fn: async () => {
-                        const url = await getdog()
-                        terminal.current.pushToStdout("getting a random dog gif for you..\n---\n")
-                        terminal.current.pushToStdout(<img src={url} width="100%" height="100%" alt='dog'></img>)
+                    fn: async (...args) => {
+                        if (args.length===1) {
+                            if(args[0] === 'gif' || args[0] === 'jpg' || args[0] === 'png'){
+                                const obj = await getdog(args)
+                                terminal.current.pushToStdout("random dog "+args[0]+" for you..\n---\n")
+                                terminal.current.pushToStdout(<img src={obj.url} width={obj.width} alt='dog'></img>)
+                            } else {
+                                return 'Wrong parameter, please use "gif" or "jpg" or "png"'
+                            }
+                        } else if (args.length===0){
+                            const obj = await getdog(undefined)
+                            terminal.current.pushToStdout("getting a random dog gif/jpg/png for you..\n---\n")
+                            terminal.current.pushToStdout("try adding a paramter e.g. 'dog gif'\n---\n")
+                            terminal.current.pushToStdout(<img src={obj.url} width={obj.width} alt='dog'></img>)
+                        } else {
+                            return 'Please only use one parameter'
+                        }
                     }
                 },
                 joke: {

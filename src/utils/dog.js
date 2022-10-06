@@ -1,5 +1,15 @@
-export default async function getdog() {
-    const res = await fetch('https://api.thedogapi.com/v1/images/search?mime_types=gif')
+export default async function getdog(args) {
+    //console.log(args[0])
+    var type = ''
+    const url = 'https://api.thedogapi.com/v1/images/search'
+
+    if (typeof args !== "undefined") {
+        type = '?mime_types='+args[0]
+    }
+    
+    const res = await fetch(url+type)
+
     const resp = await res.json()
-    return resp[0].url
+    console.log(resp)
+    return resp[0]
 }
