@@ -96,9 +96,9 @@ export default {
             fn: () => {
                 return `
                     Cool projects I have worked on.\n---\n
-                    'online.meta.mt'                  | 'my own company'    | 'wordpress'
-                    'mis.marcadores.net'              | 'Mexican affiliate' | 'wordpress'
-                    'toponlinepokies247.com'          | 'landing page'      | 'html,css'
+                    'online.meta.mt'         | 'my own company'    | 'wordpress'
+                    'mis.marcadores.net'     | 'Mexican affiliate' | 'wordpress'
+                    'toponlinepokies247.com' | 'landing page'      | 'html,css'
                 `
             }
         },

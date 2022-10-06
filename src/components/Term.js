@@ -76,7 +76,7 @@ export default function Term() {
                         terminal.current.pushToStdout("getting prices from coindesk.com..\n---\n")
                         terminal.current.pushToStdout("updated: "+obj.time.updated)
                         terminal.current.pushToStdout(obj.disclaimer)
-                        var money
+                       
                         for(let key in obj.bpi) {
                             terminal.current.pushToStdout(key+":"+obj.bpi[key].rate)
                         }
