@@ -7,7 +7,7 @@ export default function App() {
     <div className='container'>
       <Term />
       <FloatingWhatsApp
-      phoneNumber='35699910696'
+      phoneNumber='35699910969'
       accountName='Abel Rogers'
       chatMessage='Hello there! 🤝 How can I help?'
       avatar='https://en.gravatar.com/userimage/182249634/9805a640c49f6391641fe4c2b123f73c.png?size=200'
