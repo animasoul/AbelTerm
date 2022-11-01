@@ -74,7 +74,7 @@ pre {
 }
 
 .container {
-  width: 56vw;
+  width: 95vw;
   height: 95vh;
   padding: 10px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
